@@ -11,11 +11,11 @@ This is a simple Spring Boot REST API project that demonstrates core Java/Spring
 
 ## Project Structure
 
-com.coincount/
-├── controller/
-│ └── RecordController.java
-├── model/
-│ └── Record.java
+com.coincount/  
+├── controller/  
+│ └── RecordController.java  
+├── model/  
+│ └── Record.java  
 └── CoinCountApplication.java
 
 ## Key Components

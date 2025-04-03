@@ -1,4 +1,4 @@
-# 🪙 Coin Count🪙 - Learning With ME
+# 🪙 Coin Count🪙 - Learn With ME
 
 ## Overview
 

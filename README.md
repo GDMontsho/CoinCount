@@ -24,27 +24,36 @@ com.coincount/
 
 Handles HTTP requests and responses.
 
-```
+```java
 @RestController
 @RequestMapping("/api/records")
 public class RecordController {
 
     @GetMapping
-    public String getAllRecords() {
-        return "Here are all the records";
-    }
+    public List<Record> getAllRecords() { ... }
+
+    @GetMapping("/{id}")
+    public Record getRecordById(@PathVariable Long id) { ... }
+
+    @PostMapping
+    public Record createRecord(@Valid @RequestBody Record record) { ... }
+
+    @GetMapping("/category/{category}")
+    public List<Record> getRecordsByCategory(@PathVariable String category) { ... }
 }
 ```
 
 ### What I Learned:
 
-@RestController combines @Controller and @ResponseBody
+- `@RestController combines` `@Controller` and @ResponseBody
 
-@RequestMapping sets the base URL path
+- `@RequestMapping` sets the base URL path
 
-@GetMapping handles HTTP GET requests
+- `@GetMapping` handles HTTP GET requests
 
-Method return values are automatically converted to JSON/HTTP response
+- `@valid` triggers validation on request body
+
+- Spring automatically converts objects to JSON responses
 
 ### Example Usage:
 
@@ -73,11 +82,12 @@ SpringApplication.run(CoinCountApplication.class, args);
 
 ### What I Learned:
 
-@SpringBootApplication enables auto-configuration
+- @SpringBootApplication enables auto-configuration
 
-Main class starts the embedded Tomcat server
+- Main class starts the embedded Tomcat server
 
-Spring handles dependency injection automatically
+- Spring handles dependency injection automatically
+- `@Valid` triggers validation on request body
 
 ## 3. Record Model (com.coincount.model)
 
